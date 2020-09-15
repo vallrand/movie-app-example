@@ -1,0 +1,18 @@
+<app-movie-search
+    [query]="search$ | async"
+    (search)="searchMovies($event)"
+></app-movie-search>
+
+<div class="error-container" *ngIf="(errorMessage$ | async) as errorMessage" fxLayout="row" fxLayoutAlign="center center">
+    <h2><mat-error>{{ errorMessage }}</mat-error></h2>
+</div>
+
+<mat-divider></mat-divider>
+
+<app-movie-list
+    [total]="total$ | async"
+    [pageSize]="pageSize"
+    [movies]="movies$ | async"
+    [loading]="loading$ | async"
+    (nextPage)="loadPage($event)"
+></app-movie-list>

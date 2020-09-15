@@ -1,0 +1,9 @@
+<div class="error-container" *ngIf="errorMessage" fxLayout="row" fxLayoutAlign="center center">
+    <h2><mat-error>{{ errorMessage }}</mat-error></h2>
+</div>
+<mat-spinner *ngIf="loading || !url; else loaded" color="primary"></mat-spinner>
+<ng-template #loaded>
+    <div class="iframe-container" [@fade]="true">
+        <iframe [src]="url | safe: 'resourceUrl'" frameborder="0" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+    </div>
+</ng-template>

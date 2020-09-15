@@ -1,0 +1,10 @@
+<mat-form-field *ngIf="query">
+    <input
+    matInput
+    type="search"
+    placeholder="..."
+    [(ngModel)]="title"
+    (keyup.enter)="submit()"
+    />
+    <button mat-flat-button matSuffix (click)="submit()" color="primary">SEARCH</button>
+</mat-form-field>

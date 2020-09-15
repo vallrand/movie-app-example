@@ -1,0 +1,18 @@
+<mat-toolbar-row>
+    <button mat-flat-button (click)="back()">Back</button>
+</mat-toolbar-row>
+
+<mat-divider></mat-divider>
+<app-movie-detail *ngIf="(detail$ | async) as detail"
+    [movie]="detail.movie"
+    [loading]="detail.loading"
+    [errorMessage]="detail.errorMessage"
+></app-movie-detail>
+
+<mat-divider></mat-divider>
+
+<app-movie-trailer *ngIf="(trailer$ | async) as trailer"
+    [url]="trailer.url"
+    [loading]="trailer.loading"
+    [errorMessage]="trailer.errorMessage"
+></app-movie-trailer>

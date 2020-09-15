@@ -1,0 +1,22 @@
+<div class="counter" *ngIf="total">
+    Total results <strong>{{ total }}</strong>
+</div>
+
+<div
+    class="search-result"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    [scrollWindow]="true"
+    (scrolled)="onScroll()"
+    fxLayout="row wrap" fxLayoutGap="0.5em grid" fxLayoutAlign="start stretch"
+>
+    <app-movie-list-item
+        *ngFor="let movie of movies; trackBy:getItemId"
+        fxFlex="20%" fxFlex.xs="100%" fxFlex.sm="33%" fxFlex.md="25%" fxFlex.lg="20%"
+        [movie]="movie"
+    >
+    </app-movie-list-item>
+</div>
+
+<mat-spinner *ngIf="loading" color="primary"></mat-spinner>

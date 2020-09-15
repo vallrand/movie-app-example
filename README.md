@@ -1,6 +1,20 @@
 # MovieAppExample
 
+This example app allows users to search for movies and view movie details.
+
+### Used Libraries
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
+
+ - [@angular/material](https://github.com/angular/components)
+ - [@angular/flex-layout](https://github.com/angular/flex-layout)
+ - [NGRX](https://github.com/ngrx/platform) for state management
+ - [ngx-infinite-scroll](https://github.com/orizens/ngx-infinite-scroll)
+
+### Used Services
+
+ - [omdb](http://www.omdbapi.com/) - movie database
+ - [youtube search API](https://developers.google.com/youtube/v3/docs/search)
 
 ## Development server
 

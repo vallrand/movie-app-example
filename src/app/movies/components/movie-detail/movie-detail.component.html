@@ -1,0 +1,35 @@
+<div class="error-container" *ngIf="errorMessage" fxLayout="row" fxLayoutAlign="center center">
+    <h2><mat-error>{{ errorMessage }}</mat-error></h2>
+</div>
+<mat-divider></mat-divider>
+<mat-spinner *ngIf="loading || !movie; else loaded" color="primary"></mat-spinner>
+<ng-template #loaded>
+    <div [@fade]="true" fxLayout="row wrap" fxLayoutAlign="center start">
+        <div fxFlex="50%" fxFlex.xs="100%" fxLayout="column" fxLayoutAlign="start start" fxLayoutAlign.xs="start center">
+            <img src="{{ movie.poster }}">
+        </div>
+        <div class="detail" fxFlex="50%" fxFlex.xs="100%" fxLayout="column" fxLayoutAlign="start start">
+            <h2>{{ movie.title }}</h2>
+            <mat-divider></mat-divider>
+            <div fxLayout="row" fxLayoutAlign="start start">
+                <div class="header-column" fxLayout="column">
+                    <div fxFlex>Year</div>
+                    <div fxFlex>Type</div>
+                    <div fxFlex>Rating</div>
+                    <div fxFlex>Runtime</div>
+                    <div fxFlex>Genre</div>
+                </div>
+                <mat-divider [vertical]="true"></mat-divider>
+                <div fxLayout="column">
+                    <div fxFlex>{{ movie.year }}</div>
+                    <div fxFlex>{{ movie.type }}</div>
+                    <div fxFlex>{{ movie.rating }}</div>
+                    <div fxFlex>{{ movie.runtime }}</div>
+                    <div fxFlex>{{ movie.genre }}</div>
+                </div>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="plot">{{ movie.plot }}</div>
+        </div>
+    </div>
+</ng-template>

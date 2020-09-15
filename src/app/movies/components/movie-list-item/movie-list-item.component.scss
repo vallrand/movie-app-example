@@ -1,0 +1,11 @@
+:host {
+    > mat-card {
+        height: calc(100% - 2em);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        > mat-card-actions {
+            margin-top: auto;
+        }
+    }
+}
